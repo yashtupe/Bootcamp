@@ -1,0 +1,59 @@
+import numpy as np
+import pandas as pd
+import sklearn
+from sklearn.datasets import load_boston
+df = load_boston() 
+type(df)
+df.keys() # Returns all the keys of the dataset dictionary
+#dict_keys(['data', 'target', 'feature_names', 'DESCR', 'filename'])
+print(df.target)
+print(df.data)
+print(df.DESCR) #info about the dataset
+[]boston = pd.DataFrame(df.data, columns=df.feature_names)
+boston.head()
+.. _boston_dataset:
+Boston is null ()
+
+[]boston. isnull-sum():
+
+from sklearn model_selection import train_test_split.
+
+X = boston.drop ('MEDV, axis = 1)
+
+Y= boston ['MEDV']
+
+X_train, X_test, Y_train, Y_test = train _test_Split
+
+(X, Y, test_size = 0·15, random_state=5) 
+
+Print (X_train, shape)
+
+Print (X_test: stape)
+
+Print (Y_train_shape)
+
+Print (Y_test shape)
+
+from sklearn. linear_model import LinearRegression from sklearn.metrics import mean_squared_error
+
+## SPLITTING THE DATASET INTO THE TRAIN AND TEST SET TO MAKE SURE THE MO
+
+X = boston.drop('MEDV', axis=1)
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.
+
+
+lin_model = LinearRegression ()
+
+lin_model.fit(X_train, Y_train)
+y_train_predict = lin_model.predict (X_train) rmse = (np.sqrt(mean_squared_error(Y_train, y_train_predict)))
+
+print("The model performance for training set") print('RMSE is {}'.format(rmse)) print("\n")
+
+# on testing set
+
+y_test_predict lin_model.predict(x_test) = rmse = (np.sqrt(mean_squared_error(Y_test, y_test_predict)))
+
+print("The model performance for testing set")
+
+print('RMSE is {}'.format(rmse))
